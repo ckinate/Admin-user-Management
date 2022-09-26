@@ -1,0 +1,41 @@
+﻿<div class="card mt-4">
+    <h4 class="card-header">Admin</h4>
+    <div class="card-body">
+      <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+      <h4> Welcome {{userFromApi.firstName}}</h4>
+      <p>Your role is: <strong>{{user?.role}}</strong>.</p>
+      <ul  *ngIf="userFromApi">
+
+        <li> First Name :{{userFromApi.firstName}}</li>
+        <li>Last Name: {{userFromApi.lastName}}</li>
+    </ul>
+
+    <div  class="container-fluid" >
+      <h5>Recent Activity Performed by <strong>{{userFromApi.firstName}} </strong>  </h5>
+
+      <table class="table table-striped">
+       <thead>
+         <tr>
+             <th style="width: 20%">First Name</th>
+             <th style="width: 20%">Last Name</th>
+             <th style="width: 20%">Username</th>
+             <th style="width: 20%">Role</th>
+             <th style="width: 300%"> Creat/Edit By</th>
+         </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let user of UserList">
+         <td>{{user.firstName}}</td>
+         <td>{{user.lastName}}</td>
+         <td>{{user.username}}</td>
+         <td>{{user.role}}</td>
+         <td>{{user.createdBy}}</td>
+       </tr>
+     </tbody>
+      </table>
+
+    </div>
+
+
+    </div>
+</div>

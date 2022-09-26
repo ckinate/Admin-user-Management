@@ -1,0 +1,13 @@
+﻿<div class="card mt-4">
+  <h4 class="card-header">Home</h4>
+  <div class="card-body">
+    <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+    <h4 *ngIf="userFromApi"> Welcome {{userFromApi.firstName}}</h4>
+    <p>Your role is: <strong>{{user?.role}}</strong>.</p>
+    <ul *ngIf="userFromApi">
+
+      <li> First Name :{{userFromApi.firstName}}</li>
+      <li>Last Name: {{userFromApi.lastName}}</li>
+  </ul>
+  </div>
+</div>
